@@ -10,10 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{127A95FE-2D40-4619-A61B-FF6129309725}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{65CB745F-D7EC-499E-8ADE-EFE83B1330B7}"
-	ProjectSection(SolutionItems) = preProject
-		TheMovies\MainWindow.xaml = TheMovies\MainWindow.xaml
-		TheMovies\MainWindow.xaml.cs = TheMovies\MainWindow.xaml.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
