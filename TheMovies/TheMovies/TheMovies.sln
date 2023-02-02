@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMovies", "TheMovies\TheMovies.csproj", "{B7EAB3C5-7020-4164-87B3-E6F6B303B934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMovies", "TheMovies\TheMovies.csproj", "{B7EAB3C5-7020-4164-87B3-E6F6B303B934}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{9EC2002B-354B-4F57-AC07-60303EDAE071}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{127A95FE-2D40-4619-A61B-FF6129309725}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{65CB745F-D7EC-499E-8ADE-EFE83B1330B7}"
+	ProjectSection(SolutionItems) = preProject
+		TheMovies\MainWindow.xaml = TheMovies\MainWindow.xaml
+		TheMovies\MainWindow.xaml.cs = TheMovies\MainWindow.xaml.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
