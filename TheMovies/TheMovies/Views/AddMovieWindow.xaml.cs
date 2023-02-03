@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TheMovies.Model;
 using TheMovies.ViewModel;
 
 namespace TheMovies.View
@@ -22,6 +23,7 @@ namespace TheMovies.View
 
     public partial class AddMovieWindow : Window
     {
+        public Film MyProperty { get; set; }
         MainViewModel mvm = new MainViewModel();
 
 
