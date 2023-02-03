@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TheMovies.View;
 using TheMovies.ViewModel;
+using TheMovies.Model;
+
 
 namespace TheMovies
 {
@@ -38,7 +40,12 @@ namespace TheMovies
         {
             AddMovieWindow amw = new AddMovieWindow();
 
-            amw.Show();
+
+            if (amw.ShowDialog() == true) ;
+
+            mvm.filmList.Add(new Film(amw.titleLbl.Text, int.Parse(amw.durationLbl.Text), amw.genreLbl.Text));
+
+
         }
     }
 }

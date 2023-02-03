@@ -42,5 +42,11 @@ namespace TheMovies.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
         }
 
+        public void CreateNewMovie(MainViewModel mvm, string title, int duration, string genre )
+        {
+            mvm.filmList.Add(new Film(title, duration, genre));
+
+        }
+
     }
 }

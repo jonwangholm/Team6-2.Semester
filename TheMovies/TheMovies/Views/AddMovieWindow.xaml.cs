@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TheMovies.Model;
 using TheMovies.ViewModel;
 
 namespace TheMovies.View
@@ -25,7 +24,6 @@ namespace TheMovies.View
     {
         MainViewModel mvm = new MainViewModel();
 
-        List<string> stringList = new List<string>();
 
         public AddMovieWindow()
         {
@@ -39,13 +37,14 @@ namespace TheMovies.View
         private void new_Clicked(object sender, RoutedEventArgs e)
         {
 
-            mvm.filmList.Add(new Film(titleLbl.Text, int.Parse(durationLbl.Text), genreLbl.Text));
+            //  mvm.filmList.Add(new Film(titleLbl.Text, int.Parse(durationLbl.Text), genreLbl.Text));
+
+            mvm.CreateNewMovie(mvm, titleLbl.Text, int.Parse(durationLbl.Text), genreLbl.Text);
+            this.DialogResult = true;
+
 
         }
 
-        public void ReadToText()
-        {
-
-        }
+    
     }
 }
