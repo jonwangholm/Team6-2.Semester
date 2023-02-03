@@ -10,35 +10,42 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TheMovies.View;
+using TheMovies.Model;
 using TheMovies.ViewModel;
 
-namespace TheMovies
+namespace TheMovies.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddMovieWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    /// 
+
+    public partial class AddMovieWindow : Window
     {
-
         MainViewModel mvm = new MainViewModel();
-        public MainWindow()
-        {
 
+        List<string> stringList = new List<string>();
+
+        public AddMovieWindow()
+        {
             InitializeComponent();
 
             DataContext = mvm;
-            FilmRepo filmRepo = new FilmRepo();
-            filmRepo.ReadFilm();
+
+            
         }
 
-        private void createBtn_Clicked(object sender, RoutedEventArgs e)
+        private void new_Clicked(object sender, RoutedEventArgs e)
         {
-            AddMovieWindow amw = new AddMovieWindow();
 
-            amw.Show();
+            mvm.filmList.Add(new Film(titleLbl.Text, int.Parse(durationLbl.Text), genreLbl.Text));
+
+        }
+
+        public void ReadToText()
+        {
+
         }
     }
 }
