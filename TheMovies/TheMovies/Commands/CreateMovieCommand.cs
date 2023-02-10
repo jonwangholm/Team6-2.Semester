@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using TheMovies.Model;
-using TheMovies.View;
-using TheMovies.ViewModel;
-using TheMovies.ViewModel.Persistence;
+using TheMovies.MVVM.Model;
+using TheMovies.MVVM.ViewModel;
+using TheMovies.MVVM.ViewModel.Persistence;
+using TheMovies.MVVM.Views;
 
 namespace TheMovies.Commands
 {

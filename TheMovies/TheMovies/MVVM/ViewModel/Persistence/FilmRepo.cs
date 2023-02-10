@@ -6,9 +6,9 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using TheMovies.Model;
+using TheMovies.MVVM.Model;
 
-namespace TheMovies.ViewModel.Persistence
+namespace TheMovies.MVVM.ViewModel.Persistence
 {
     public class FilmRepo
     {

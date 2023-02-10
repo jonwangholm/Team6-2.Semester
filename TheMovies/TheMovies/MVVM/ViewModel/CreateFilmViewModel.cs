@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheMovies.ViewModel
+namespace TheMovies.MVVM.ViewModel
 {
     public class CreateFilmViewModel : INotifyPropertyChanged
     {

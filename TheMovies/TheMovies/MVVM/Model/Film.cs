@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 
-namespace TheMovies.Model
+namespace TheMovies.MVVM.Model
 {
     public class Film
     {

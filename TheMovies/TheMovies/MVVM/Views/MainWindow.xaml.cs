@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TheMovies.View;
-using TheMovies.ViewModel;
-using TheMovies.Model;
-using TheMovies.ViewModel.Persistence;
+using TheMovies.MVVM.Views;
+using TheMovies.MVVM.ViewModel;
+using TheMovies.MVVM.Model;
+using TheMovies.MVVM.ViewModel.Persistence;
 
-namespace TheMovies
+namespace TheMovies.MVVM.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

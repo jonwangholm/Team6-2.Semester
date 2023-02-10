@@ -9,10 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TheMovies.Commands;
-using TheMovies.Model;
-using TheMovies.ViewModel.Persistence;
+using TheMovies.MVVM.Model;
+using TheMovies.MVVM.ViewModel.Persistence;
 
-namespace TheMovies.ViewModel
+namespace TheMovies.MVVM.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
@@ -22,7 +22,7 @@ namespace TheMovies.ViewModel
 
         public ObservableCollection<Film> FilmList { get; set; }
 
-        public MainViewModel ()
+        public MainViewModel()
         {
             FilmRepo.Instance.Load();
 
@@ -44,7 +44,7 @@ namespace TheMovies.ViewModel
         }
         #endregion
 
-        public void CreateNewMovie(MainViewModel mvm, string title, int duration, string genre )
+        public void CreateNewMovie(MainViewModel mvm, string title, int duration, string genre)
         {
             //mvm.filmList.Add(new Film(title, duration, genre));
 

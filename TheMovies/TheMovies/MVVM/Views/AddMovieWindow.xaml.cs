@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TheMovies.Model;
-using TheMovies.ViewModel;
+using TheMovies.MVVM.Model;
+using TheMovies.MVVM.ViewModel;
 
-namespace TheMovies.View
+namespace TheMovies.MVVM.Views
 {
     /// <summary>
     /// Interaction logic for AddMovieWindow.xaml
