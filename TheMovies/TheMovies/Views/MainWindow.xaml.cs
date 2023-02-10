@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using TheMovies.View;
 using TheMovies.ViewModel;
 using TheMovies.Model;
-
+using TheMovies.ViewModel.Persistence;
 
 namespace TheMovies
 {
@@ -24,28 +24,16 @@ namespace TheMovies
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        MainViewModel mvm = new MainViewModel();
         public MainWindow()
         {
-
             InitializeComponent();
 
-            DataContext = mvm;
-            FilmRepo filmRepo = new FilmRepo();
-            filmRepo.ReadFilm();
+            DataContext = new MainViewModel();
         }
 
-        private void createBtn_Clicked(object sender, RoutedEventArgs e)
+        private void Window_Closed(object sender, EventArgs e)
         {
-            AddMovieWindow amw = new AddMovieWindow();
-
-
-            if (amw.ShowDialog() == true) ;
-
-            mvm.filmList.Add(new Film(amw.titleLbl.Text, int.Parse(amw.durationLbl.Text), amw.genreLbl.Text));
-
-
+            FilmRepo.Instance.Save();
         }
     }
 }

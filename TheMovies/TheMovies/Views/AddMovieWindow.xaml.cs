@@ -23,30 +23,17 @@ namespace TheMovies.View
 
     public partial class AddMovieWindow : Window
     {
-        public Film MyProperty { get; set; }
-        MainViewModel mvm = new MainViewModel();
-
-
         public AddMovieWindow()
         {
             InitializeComponent();
 
-            DataContext = mvm;
-
-            
+            DataContext = new CreateFilmViewModel();
         }
 
         private void new_Clicked(object sender, RoutedEventArgs e)
         {
-
-            //  mvm.filmList.Add(new Film(titleLbl.Text, int.Parse(durationLbl.Text), genreLbl.Text));
-
-            mvm.CreateNewMovie(mvm, titleLbl.Text, int.Parse(durationLbl.Text), genreLbl.Text);
-            this.DialogResult = true;
-
-
+            DialogResult = true;
+            Close();
         }
-
-    
     }
 }

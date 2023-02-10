@@ -58,7 +58,7 @@
                     <TextBox x:Name="durationLbl"  Text="{Binding EnterDuration}"  BorderBrush="White" Width="100"></TextBox>
                 </StackPanel>
 
-                <Button Command="{Binding NewCmd}" Click="new_Clicked"  CommandParameter="{Binding}" Margin="0,20,0,0" Content="Gem Film og Info"/>
+                <Button Click="new_Clicked" Margin="0,20,0,0" Content="Gem Film og Info"/>
                 
 
 
