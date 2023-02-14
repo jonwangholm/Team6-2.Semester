@@ -10,36 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TheMovies.MVVM.Views;
 using TheMovies.MVVM.ViewModel;
-using TheMovies.MVVM.Model;
-using TheMovies.MVVM.ViewModel.Persistence;
 
 namespace TheMovies.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UpdateMovie.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UpdateMovie : Window
     {
-        public MainWindow()
+        public UpdateMovie()
         {
             InitializeComponent();
-
-            DataContext = new MainViewModel();
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            FilmRepo.Instance.Save();
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-        
+            DataContext = new UpdateViewModel();
         }
     }
 }

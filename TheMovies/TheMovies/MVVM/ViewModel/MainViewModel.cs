@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,10 @@ namespace TheMovies.MVVM.ViewModel
         #endregion
 
         public ObservableCollection<Film> FilmList { get; set; }
+        public Film SelectedFilm { get; set; }
+
+
+
 
         public MainViewModel()
         {
@@ -29,6 +34,8 @@ namespace TheMovies.MVVM.ViewModel
             FilmList = new ObservableCollection<Film>(FilmRepo.Instance.RetrieveAll());
 
             FilmList.CollectionChanged += OnFilmListChanged;
+
+            
         }
 
         #region OnChanged events
@@ -49,6 +56,13 @@ namespace TheMovies.MVVM.ViewModel
             //mvm.filmList.Add(new Film(title, duration, genre));
 
         }
+
+        //public MainViewModel(Film film)
+        //{
+
+            
+
+        //}
 
     }
 }
