@@ -32,7 +32,8 @@ namespace TheMovies.Commands
                 {
                     if (amw.DataContext is CreateFilmViewModel createFilmVM)
                     {
-                        mvm.FilmList.Add(FilmRepo.Instance.CreateFilm(createFilmVM.EnterTitle, createFilmVM.EnterGenre, createFilmVM.EnterDuration, null, DateTime.Now));
+                        Film film = new(createFilmVM.EnterTitle, createFilmVM.EnterGenre, createFilmVM.EnterDuration, "", DateTime.Now);
+                        mvm.FilmList.Add(FilmRepo.Instance.Create(film));
                         FilmRepo.Instance.Save();
                     }
                 }
