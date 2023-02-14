@@ -116,6 +116,18 @@ namespace TheMovies.MVVM.ViewModel.Persistence
 
         }
 
+        public void Update(Film film)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE FILM SET Title = @Title, Genre = @Genre, Make = @Make, Year = @Year WHERE Id = @Id", con);
+                cmd.Parameters.Add("@Id", SqlDbType.NVarChar).Value = carToBeUpdated.Id;
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+
         //public void Load()
         //{
         //    if (!File.Exists(filePath))
