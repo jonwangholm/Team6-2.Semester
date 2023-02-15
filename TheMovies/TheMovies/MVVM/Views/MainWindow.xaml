@@ -102,9 +102,9 @@
                     </ListBox>
 
 
-                    <StackPanel Grid.Column="2" Orientation="Vertical" DataContext="{Binding }" Margin="50,0,0,0">
+                    <StackPanel Grid.Column="2" Orientation="Vertical" Margin="50,0,0,0">
                         <Label  Foreground="White">Title</Label>
-                        <TextBox Foreground="Black"  HorizontalAlignment="Left" x:Name="titleLbl" Text="{Binding S1.Title}"  Width="100"/>
+                        <TextBox Foreground="Black"  HorizontalAlignment="Left" x:Name="titleLbl" Text="{Binding S1.Title, UpdateSourceTrigger=PropertyChanged}"  Width="100"/>
                         <Label Foreground="White">Genre</Label>
                     <TextBox Width="100" HorizontalAlignment="Left" ></TextBox>
                         <Label Foreground="White">Duration</Label>

@@ -22,7 +22,20 @@ namespace TheMovies.MVVM.ViewModel
         #endregion
 
         public ObservableCollection<Film> FilmList { get; set; }
-        public Film S1 { get; set; }
+        private Film _s1;
+        public Film S1
+        {
+            get
+            {
+                return _s1;
+            }
+
+            set
+            {
+                _s1 = value;
+                OnPropertyChanged(nameof(S1));
+            }
+        }
 
 
      
