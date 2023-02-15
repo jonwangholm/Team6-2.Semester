@@ -22,10 +22,10 @@ namespace TheMovies.MVVM.ViewModel
         #endregion
 
         public ObservableCollection<Film> FilmList { get; set; }
-        public Film SelectedFilm { get; set; }
+        public Film S1 { get; set; }
 
 
-
+     
 
         public MainViewModel()
         {

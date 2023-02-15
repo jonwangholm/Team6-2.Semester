@@ -24,11 +24,14 @@ namespace TheMovies.MVVM.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        MainViewModel mvm = new MainViewModel();   
         public MainWindow()
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel();
+            DataContext = mvm;
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
