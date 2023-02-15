@@ -81,46 +81,46 @@
                 </Grid.Resources>
 
 
-                    <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
-
-                        <Button Command="{Binding CreateMovieCommand}" CommandParameter="{Binding}">Opret Film</Button>
-                        <Button>Se Spilletider</Button>
-                        <Button  Click="Button_Click">Opdater</Button>
+                <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+                    <Button Command="{Binding CreateMovieCommand}" CommandParameter="{Binding}">Opret Film</Button>
+                    <Button>Se Spilletider</Button>
+                    <Button  Command="{Binding UpdateMoviesCommand}" CommandParameter="{Binding}">Opdater</Button>
+                    <Button  Command="{Binding DeleteMovieCommand}" CommandParameter="{Binding}">Slet</Button>
                 </StackPanel>
 
 
-                    <ListBox Grid.Column="1" x:Name="FilmList1" ItemsSource="{Binding FilmList, UpdateSourceTrigger=PropertyChanged}"   SelectedItem="{Binding S1}"  Background="Gray"  Margin="0,10,0,10">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Title}" Foreground="White" FontSize="20" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
+                <ListBox Grid.Column="1" x:Name="FilmList1" ItemsSource="{Binding FilmList, UpdateSourceTrigger=PropertyChanged}"   SelectedItem="{Binding S1}"  Background="Gray"  Margin="0,10,0,10">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
 
-                    </ListBox>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Title}" Foreground="White" FontSize="20" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
 
-
-                    <StackPanel Grid.Column="2" Orientation="Vertical" Margin="50,0,0,0">
-                        <Label  Foreground="White">Title</Label>
-                        <TextBox Foreground="Black"  HorizontalAlignment="Left" x:Name="titleLbl" Text="{Binding S1.Title, UpdateSourceTrigger=PropertyChanged}"  Width="100"/>
-                        <Label Foreground="White">Genre</Label>
-                    <TextBox Width="100" HorizontalAlignment="Left" ></TextBox>
-                        <Label Foreground="White">Duration</Label>
-                    <TextBox Width="100" HorizontalAlignment="Left" ></TextBox>
-                        <Label Foreground="White">Film Instructor</Label>
-                    <TextBox Width="100" HorizontalAlignment="Left" ></TextBox>
-                        <Label Foreground="White">Premiere Date</Label>
-                    <TextBox Width="100" HorizontalAlignment="Left" ></TextBox>
+                </ListBox>
 
 
-
-                    </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Vertical" Margin="50,0,0,0">
+                    <Label  Foreground="White">Title</Label>
+                    <TextBox Foreground="Black"  HorizontalAlignment="Left" x:Name="titleLbl" Text="{Binding S1.Title, UpdateSourceTrigger=PropertyChanged}"  Width="100"/>
+                    <Label Foreground="White">Genre</Label>
+                    <TextBox Width="100" HorizontalAlignment="Left" Text="{Binding S1.Genre, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <Label Foreground="White">Duration</Label>
+                    <TextBox Width="100" HorizontalAlignment="Left" Text="{Binding S1.Duration, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <Label Foreground="White">Film Instructor</Label>
+                    <TextBox Width="100" HorizontalAlignment="Left" Text="{Binding S1.Director, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <Label Foreground="White">Premiere Date</Label>
+                    <TextBox Width="100" HorizontalAlignment="Left" Text="{Binding S1.PremiereDate, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
 
 
-                
+                </StackPanel>
+
+
+
+
 
 
 

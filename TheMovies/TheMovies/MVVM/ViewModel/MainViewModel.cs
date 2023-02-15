@@ -19,6 +19,8 @@ namespace TheMovies.MVVM.ViewModel
     {
         #region Commands
         public CreateMovieCommand CreateMovieCommand { get; set; } = new();
+        public UpdateMoviesCommand UpdateMoviesCommand { get; set; } = new();
+        public DeleteMovieCommand DeleteMovieCommand { get; set; } = new();
         #endregion
 
         public ObservableCollection<Film> FilmList { get; set; }
@@ -37,9 +39,6 @@ namespace TheMovies.MVVM.ViewModel
             }
         }
 
-
-     
-
         public MainViewModel()
         {
             FilmRepo.Instance.Load();
@@ -47,8 +46,6 @@ namespace TheMovies.MVVM.ViewModel
             FilmList = new ObservableCollection<Film>(FilmRepo.Instance.RetrieveAll());
 
             FilmList.CollectionChanged += OnFilmListChanged;
-
-            
         }
 
         #region OnChanged events
@@ -69,13 +66,5 @@ namespace TheMovies.MVVM.ViewModel
             //mvm.filmList.Add(new Film(title, duration, genre));
 
         }
-
-        //public MainViewModel(Film film)
-        //{
-
-            
-
-        //}
-
     }
 }

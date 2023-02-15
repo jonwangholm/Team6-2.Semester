@@ -106,14 +106,15 @@ namespace TheMovies.MVVM.ViewModel.Persistence
                         int Duration = int.Parse(dr["Duration"].ToString());
                         string Director = dr["FilmInstructor"].ToString();
                         DateTime PremiereDate = DateTime.Parse(dr["PremiereDate"].ToString());
+                        int FilmID = int.Parse(dr["FilmID"].ToString());
 
                         Film film = new Film(Title, Genre, Duration, Director, PremiereDate);
+                        film.Id = FilmID;
                         
                         films.Add(film);
                     }
                 }
             }
-
         }
 
         public void Update(Film film)
@@ -121,12 +122,31 @@ namespace TheMovies.MVVM.ViewModel.Persistence
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE FILM SET Title = @Title, Genre = @Genre, Make = @Make, Year = @Year WHERE Id = @Id", con);
-                cmd.Parameters.Add("@Id", SqlDbType.NVarChar).Value = film.Id;
+                SqlCommand cmd = new SqlCommand("UPDATE FILM SET Title = @Title, Genre = @Genre, Duration = @Duration, " +
+                    "FilmInstructor = @Director, PremiereDate = @PremiereDate WHERE FilmID = @Id", con);
+                cmd.Parameters.Add("@Title", SqlDbType.NVarChar).Value = film.Title;
+                cmd.Parameters.Add("@Genre", SqlDbType.NVarChar).Value = film.Genre;
+                cmd.Parameters.Add("@Duration", SqlDbType.Int).Value = film.Duration;
+                cmd.Parameters.Add("@Director", SqlDbType.NVarChar).Value = film.Director;
+                cmd.Parameters.Add("@PremiereDate", SqlDbType.SmallDateTime).Value = film.PremiereDate;
+                cmd.Parameters.Add("@Id", SqlDbType.Int).Value = film.Id;
                 cmd.ExecuteNonQuery();
             }
 
         }
+
+        public void Delete(Film film)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM FILM WHERE FilmID = @Id", con);
+                cmd.Parameters.Add("@Id", SqlDbType.Int).Value = film.Id;
+                cmd.ExecuteNonQuery();
+            }
+            films.Remove(film);
+        }
+
 
         //public void Load()
         //{
