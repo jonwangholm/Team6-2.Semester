@@ -8,5 +8,18 @@ namespace Budweg.MVVM.Models
 {
     public class Report
     {
+        public string Subject { get; set; }
+        public string Title { get; set; }
+        public bool IsAnon { get; set; }
+        public Employee Sender { get; set; }
+        public List<Message> Chat { get; set; }
+        public int ReportId { get; set; }
+
+        public Report(string subject, string title, bool isAnon)
+        {
+            Subject = subject;
+            Title = title;
+            IsAnon = isAnon;
+        }
     }
 }
