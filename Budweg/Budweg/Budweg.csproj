@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\Models\" />
+    <Folder Include="MVVM\ViewModels\Persistence\" />
   </ItemGroup>
 
 </Project>
