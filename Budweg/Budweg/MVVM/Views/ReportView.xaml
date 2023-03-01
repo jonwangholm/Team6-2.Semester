@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Budweg.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="584" d:DesignWidth="711">
-    <Grid Background="#155672">
+    <Border Background="#1cb17d" CornerRadius="20">
+        <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
 
@@ -17,9 +18,9 @@
 
 
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="#0c3040" >
+            <StackPanel Grid.Row="0" Background="#dde2ec" >
             <Label Content="Ny Indberetning"
-                   Foreground="White"
+                   Foreground="Black"
                    FontSize="30"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
@@ -27,8 +28,10 @@
             ></Label>
         </StackPanel>
 
-<TextBox  Grid.Row="1"  Margin="20,5,20,5" ></TextBox>
-            
+        <Border BorderBrush="#dde2ec" BorderThickness="3" CornerRadius="10" Grid.Row="1"   Background="White">
+
+<TextBox BorderBrush="Transparent"></TextBox>     
+        </Border>
         <TextBox  Grid.Row="2"  Margin="20,0" ></TextBox>
         <Grid Grid.Row="3" >
             <Grid.ColumnDefinitions>
@@ -47,4 +50,5 @@
 
 
     </Grid>
+    </Border>
 </UserControl>
