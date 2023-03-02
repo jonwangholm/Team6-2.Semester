@@ -109,17 +109,25 @@
                                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                                         <Label Background="Green" Foreground="White" Height="26">Bekræftet</Label>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="2"  Orientation="Horizontal" Margin="0,0,0,1">
+                                    <Grid Grid.Row="2"  Margin="0,0,0,1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+</Grid.ColumnDefinitions>
                                         <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
-                                        <Label Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Anonym" Margin="05,0,0,0"/>
-                                        <Label Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="13-02-2022" Margin="30,0,0,0"/>
+                                        <Label Grid.Column="1" Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Anonym" Margin="05,0,0,0"/>
+                                        <Label Grid.Column="2" Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="13-02-2022" Margin="0,0,20,0"/>
 
 
-                                    </StackPanel>
+                                    </Grid>
                                 </Grid>
 
 
                             </ListBoxItem>
+
 
                         <ListBoxItem Background="#ffffff" BorderBrush="#dde2ec" Width="239" Margin="0,5">
 
@@ -146,14 +154,22 @@
                                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                                         <Label Background="Orange" Foreground="White" Height="26">Afventer Svar</Label>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="2"  Orientation="Horizontal" Margin="0,0,0,1">
-                                        <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
-                                        <Label Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Jonas" Margin="05,0,0,0"/>
-                                        <Label Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="17-07-2022" Margin="30,0,0,0"/>
+                                <Grid Grid.Row="2"  Margin="0,0,0,1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
 
 
-                                    </StackPanel>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
+                                    <Label Grid.Column="1" Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Jonas" Margin="05,0,0,0"/>
+                                    <Label Grid.Column="2" Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="13-02-2022" Margin="0,0,20,0"/>
+
+
                                 </Grid>
+
+</Grid>
 
 
                             </ListBoxItem>
@@ -181,16 +197,24 @@
                                     </StackPanel>
 
                                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                                        <Label Background="Red" Foreground="White" Height="26">Afvist</Label>
+                                        <Label Background="Red" Foreground="White" Height="26">Ikke læst</Label>
                                     </StackPanel>
-                                    <StackPanel Grid.Row="2"  Orientation="Horizontal" Margin="0,0,0,1">
-                                        <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
-                                        <Label Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Seymen" Margin="05,0,0,0"/>
-                                        <Label Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="28-02-2023" Margin="30,0,0,0"/>
+                                <Grid Grid.Row="2"  Margin="0,0,0,1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
 
 
-                                    </StackPanel>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
+                                    <Label Grid.Column="1" Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Anonym" Margin="05,0,0,0"/>
+                                    <Label Grid.Column="2" Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="13-02-2022" Margin="0,0,20,0"/>
+
+
                                 </Grid>
+
+</Grid>
 
 
                             </ListBoxItem>
@@ -295,7 +319,7 @@
                     </Button>
                 </Grid>
             </Grid>
-            <ContentControl Grid.Column="1" x:Name="MenuControl" Visibility="Hidden" Content="{Binding }"/>
+            <ContentControl Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Hidden" Content="{Binding }"/>
 
         </Grid>
     </Grid>
