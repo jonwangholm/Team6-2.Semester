@@ -33,7 +33,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
                         string Subject = dr["Subject"].ToString();
                         string Title = dr["Title"].ToString();
                         bool IsAnon = bool.Parse(dr["IsAnonymous"].ToString());
-                        Employee Sender = EmployeeRepository.Instance.GetEmployeeId(dr["Email"].ToString());
+                        Employee Sender = RepositoryManager.EmployeeRepository.GetEmployeeId(dr["Email"].ToString());
 
 
                         Report report = new Report(Subject, Title, IsAnon, Sender);

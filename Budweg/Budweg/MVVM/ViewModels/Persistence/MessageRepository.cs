@@ -31,7 +31,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
                         Message message = new Message(Content, SendTime);
                         message.MessageId = MessageId;
                         messages.Add(message);
-                        Report report = ReportRepository.Instance.Retrieve(ReportId);
+                        Report report = RepositoryManager.ReportRepository.Retrieve(ReportId);
                         report.Chat.Add(message);
                     }
                 }
