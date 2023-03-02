@@ -32,7 +32,41 @@ namespace Budweg.MVVM.ViewModels.Persistence
 
         public override void Load()
         {
-            throw new NotImplementedException();
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM REPORT", con);
+
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+
+                        int ReportId = int.Parse(dr["ReportId"].ToString());
+                        string Subject = dr["Subject"].ToString();
+                        string Title = dr["Title"].ToString();
+                        bool IsAnon = bool.Parse(dr["IsAnonymous"].ToString());
+                        Employee Sender = EmployeeRepository.Instance.GetEmployeeId(dr["Email"].ToString());
+
+
+                        Report report = new Report(Subject, Title, IsAnon, Sender);
+                        report.ReportId = ReportId;
+                        reports.Add(report);
+
+                        
+
+
+
+
+                    }
+                }
+
+
+            }
+
         }
 
         public override void Save()
@@ -57,12 +91,12 @@ namespace Budweg.MVVM.ViewModels.Persistence
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO REPORT(Subject, Title, IsAnon, Email)" +
-                    "VALUES(@Subject, @Title, @IsAnon, @Email)" + 
+                SqlCommand cmd = new SqlCommand("INSERT INTO REPORT(Subject, Title, IsAnonymous, Email)" +
+                    "VALUES(@Subject, @Title, @IsAnonymous, @Email)" + 
                     "SELECT @@IDENTITY", con);
                 cmd.Parameters.Add("@Subject", SqlDbType.NVarChar).Value = report.Subject;
                 cmd.Parameters.Add("@Title", SqlDbType.NVarChar).Value = report.Title;
-                cmd.Parameters.Add("@IsAnon", SqlDbType.Bit).Value = report.IsAnon;
+                cmd.Parameters.Add("@IsAnonymous", SqlDbType.Bit).Value = report.IsAnon;
                 cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = report.Sender;
                 report.ReportId = Convert.ToInt32(cmd.ExecuteScalar());
                 

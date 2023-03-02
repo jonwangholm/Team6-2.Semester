@@ -15,11 +15,18 @@ namespace Budweg.MVVM.Models
         public List<Message> Chat { get; set; }
         public int ReportId { get; set; }
 
-        public Report(string subject, string title, bool isAnon)
+        public Report(string subject, string title, bool isAnon, Employee sender)
         {
             Subject = subject;
             Title = title;
             IsAnon = isAnon;
+            Sender = sender;
         }
+
+        public Report()
+        {
+
+        }
+
     }
 }

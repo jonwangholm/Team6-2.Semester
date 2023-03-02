@@ -18,5 +18,17 @@ namespace Budweg.MVVM.Models
             Email = email;
             IsHR = isHr;
         }
+
+        public Employee()
+        {
+
+        }
+
+        public string GetEmail(string email)
+        {
+            Email = email;
+            return Email;
+        }
+
     }
 }

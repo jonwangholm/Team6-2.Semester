@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using Budweg.MVVM.Models;
@@ -54,6 +55,24 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 }
             }
         }
+
+        public Employee GetEmployeeId(string email)
+        {
+            foreach (Employee emails in employees)
+            {
+                if (emails.Email == email)
+                {
+                    return emails;
+
+                }
+
+
+            }
+                return null;
+
+        }
+
+
 
         public override void Save()
         {
