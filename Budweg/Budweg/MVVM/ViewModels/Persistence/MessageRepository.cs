@@ -10,24 +10,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
 {
     public class MessageRepository : Repository
     {
-        #region Singleton Pattern
-        private static MessageRepository _instance;
-
-        public static MessageRepository Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new MessageRepository();
-                    return _instance;
-                }
-                return _instance;
-            }
-        }
-        #endregion
-
-
+      
         List<Message> messages = new List<Message>();
 
         public override void Load()

@@ -11,23 +11,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
 {
     public class ReportRepository : Repository
     {
-        #region Singleton Pattern
-        private static ReportRepository _instance;
-
-        public static ReportRepository Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new ReportRepository();
-                    return _instance;
-                }
-                return _instance;
-            }
-        }
-        #endregion
-
+     
         private List<Report> reports = new List<Report>();
 
         public override void Load()
