@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Budweg.MVVM.ViewModels.Persistence
 {
-    internal class RepositoryManager
+    public class RepositoryManager
     {
+        public static EmployeeRepository EmployeeRepository { get; set; }   
+        public static MessageRepository MessageRepository { get; set; }
+        public static ReportRepository ReportRepository { get; set; }
+
     }
 }
