@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Budweg.MVVM.Models
+﻿namespace Budweg.MVVM.Models
 {
     public class Employee
     {
@@ -17,11 +11,6 @@ namespace Budweg.MVVM.Models
             Name = name;
             Email = email;
             IsHR = isHr;
-        }
-
-        public Employee()
-        {
-
         }
 
         public string GetEmail(string email)
