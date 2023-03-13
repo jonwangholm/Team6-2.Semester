@@ -160,7 +160,6 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
 
-
                                     </Grid.ColumnDefinitions>
                                     <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
                                     <Label Grid.Column="1" Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="Jonas" Margin="05,0,0,0"/>
@@ -234,7 +233,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button  x:Name="SendReportButton"  Visibility="Visible" Click="Send_Click" Height="35" BorderThickness="0.5" BorderBrush="#dde2ec" Background="#2ea043" Content="Send Indberetning" Foreground="White" FontSize="20" >
+                        <Button  x:Name="SendReportButton"  Visibility="Hidden" Click="Send_Click" Height="35" BorderThickness="0.5" BorderBrush="#dde2ec" Background="#2ea043" Content="Send Indberetning" Foreground="White" FontSize="20" >
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="15"/>

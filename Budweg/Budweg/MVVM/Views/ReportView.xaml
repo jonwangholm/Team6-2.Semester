@@ -30,7 +30,7 @@
             </StackPanel>
 
 
-            <TextBox BorderBrush="#dde2ec" BorderThickness="2" Margin="20,0,20,0">
+            <TextBox BorderBrush="#dde2ec" BorderThickness="2" Margin="21,0,20,0">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
