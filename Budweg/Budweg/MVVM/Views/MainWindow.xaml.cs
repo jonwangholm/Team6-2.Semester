@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Budweg.MVVM.ViewModels;
 
 namespace Budweg
 {
@@ -23,6 +24,20 @@ namespace Budweg
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void indtastBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ReportViewModel();
+            SendReportButton.Visibility = Visibility.Visible;
+            MenuControl.Visibility = Visibility.Visible;
+        }
+
+        private void Send_Click(object sender, RoutedEventArgs e)
+        {
+            SendReportButton.Visibility = Visibility.Hidden;
+            MenuControl.Visibility = Visibility.Hidden;
+
         }
     }
 }
