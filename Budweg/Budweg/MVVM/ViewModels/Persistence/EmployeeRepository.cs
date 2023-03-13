@@ -12,6 +12,11 @@ namespace Budweg.MVVM.ViewModels.Persistence
 {
     public class EmployeeRepository : Repository
     {
+        public EmployeeRepository() 
+        {
+            Load();
+        }
+
         List<Employee> employees = new List<Employee>();
 
         public override void Load()
@@ -46,13 +51,10 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 if (emails.Email == email)
                 {
                     return emails;
-
                 }
-
 
             }
                 return null;
-
         }
 
 
