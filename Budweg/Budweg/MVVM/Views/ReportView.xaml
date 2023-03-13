@@ -5,8 +5,96 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Budweg.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="584" d:DesignWidth="711">
+    <Border Background="#1cb17d" CornerRadius="20">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="59"></RowDefinition>
+
+                <RowDefinition Height="19"></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition Height="75"></RowDefinition>
+
+
+
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Background="Transparent" >
+
+                <Label Content="Ny Indberetning"
+                       Foreground="Black"
+                       FontSize="30"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       
+                ></Label>
+            </StackPanel>
+
+
+            <TextBox BorderBrush="#dde2ec" BorderThickness="2" Margin="20,0,20,0">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <TextBox  Grid.Row="2"  Margin="20,0,20,0" >
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+
+
+            </TextBox>
+            <Grid Grid.Row="3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+
+
+
+
+
+                </Grid.ColumnDefinitions>
+                <CheckBox Grid.Column="0"  VerticalAlignment="Center" Margin="5,10" VerticalContentAlignment="Center" Content="Anonym" FontSize="20" Foreground="#dde2ec" >
+                    <CheckBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Width" Value="50"></Setter>
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="CornerRadius" Value="30"/>
+                        </Style>
+
+
+                    </CheckBox.Resources>
+
+
+                </CheckBox>
+
+
+                <Label Grid.Column="1" VerticalAlignment="Center" Margin="5,10" VerticalContentAlignment="Center"  FontSize="15" Foreground="#dde2ec" >Vælg de ansatte denne indberetning omhandler:</Label>
+                <ComboBox Grid.Column="2" BorderThickness="2"  Background="White" Margin="0,20,0,20">
+                    <ComboBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+
+
+                    </ComboBox.Resources>
+
+
+                    <ComboBoxItem>Adil</ComboBoxItem>
+                    <ComboBoxItem>Oguz</ComboBoxItem>
+                    <ComboBoxItem>Kasper</ComboBoxItem>
+                    <ComboBoxItem>Jonathan</ComboBoxItem>
+
+
+                </ComboBox>
+            </Grid>
+
+
+        </Grid>
+    </Border>
 </UserControl>

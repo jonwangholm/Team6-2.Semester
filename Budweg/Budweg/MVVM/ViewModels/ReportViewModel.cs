@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Budweg.MVVM.Views;
 
 namespace Budweg.MVVM.ViewModels
 {
@@ -35,6 +36,11 @@ namespace Budweg.MVVM.ViewModels
                 Chat.Add(new MessageViewModel(message));
 
             ReportId = source.ReportId;
+        }
+
+        public ReportViewModel()
+        {
+            //tom constructor
         }
 
         public void Delete()
