@@ -80,5 +80,18 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 return employee;
             }
         }
+
+        public void Delete(Employee employee)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM EMPLOYEE WHERE Email = @Email",con);
+
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = employee.Email;
+                cmd.ExecuteNonQuery();
+            }
+                employees.Remove(employee);
+        }
     }
 }

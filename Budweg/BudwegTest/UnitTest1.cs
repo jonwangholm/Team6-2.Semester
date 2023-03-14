@@ -37,7 +37,8 @@ namespace BudwegTest
 
             Employee employeeCreate = er1.GetEmployeeId(e1.Email);
 
-            //Delete
+            //Delete to avoid duplication in database
+            er1.Delete(e1);
 
             //ASSERT
             Assert.AreEqual("Henrik", employeeCreate.Name);
