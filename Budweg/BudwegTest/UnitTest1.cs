@@ -1,14 +1,14 @@
-using Budweg;
-using Budweg.MVVM.ViewModels.Persistence;
+
+
 using Budweg.MVVM.Models;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Serialization;
+using Budweg.MVVM.ViewModels.Persistence;
 
 namespace BudwegTest
 {
     [TestClass]
     public class UnitTest1
     {
-        Employee e1,e2;
+        Employee e1, e2;
         EmployeeRepository er1;
 
         [TestInitialize]

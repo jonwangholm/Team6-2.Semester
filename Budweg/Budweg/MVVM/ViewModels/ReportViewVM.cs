@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budweg.MVVM.ViewModels
 {
-   public class MainViewModel
+    public class ReportViewVM
     {
-
-        
     }
 }

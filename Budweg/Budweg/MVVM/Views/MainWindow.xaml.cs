@@ -29,7 +29,7 @@ namespace Budweg
 
         private void indtastBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ReportViewModel();
+            DataContext = new ReportViewVM();
             SendReportButton.Visibility = Visibility.Visible;
             MenuControl.Visibility = Visibility.Visible;
         }

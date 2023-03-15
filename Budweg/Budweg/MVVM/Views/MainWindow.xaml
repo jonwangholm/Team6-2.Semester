@@ -6,16 +6,15 @@
         xmlns:Views="clr-namespace:Budweg.MVVM.Views"
 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Budweg"
         mc:Ignorable="d"
         Title="Budweg" Height="600" Width="1000">
 
     <Window.DataContext>
-        <ViewModels:MainViewModel/>
+        <ViewModels:MainVM/>
     </Window.DataContext>
 
     <Window.Resources>
-        <DataTemplate x:Name="reportViewModel" DataType="{x:Type ViewModels:ReportViewModel}">
+        <DataTemplate x:Name="reportViewModel" DataType="{x:Type ViewModels:ReportViewVM}">
             <Views:ReportView DataContext="{Binding}"/>
         </DataTemplate>
 
