@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budweg", "Budweg\Budweg.csproj", "{81FCAD55-E59F-458A-9EEA-CAFF50D7DA13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudwegTest", "BudwegTest\BudwegTest.csproj", "{768539AC-6AD2-4131-9BA8-C61A871B9F16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{81FCAD55-E59F-458A-9EEA-CAFF50D7DA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81FCAD55-E59F-458A-9EEA-CAFF50D7DA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81FCAD55-E59F-458A-9EEA-CAFF50D7DA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768539AC-6AD2-4131-9BA8-C61A871B9F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768539AC-6AD2-4131-9BA8-C61A871B9F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768539AC-6AD2-4131-9BA8-C61A871B9F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768539AC-6AD2-4131-9BA8-C61A871B9F16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

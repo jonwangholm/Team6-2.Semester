@@ -12,6 +12,11 @@ namespace Budweg.MVVM.ViewModels.Persistence
 {
     public class EmployeeRepository : Repository
     {
+        public EmployeeRepository() 
+        {
+            Load();
+        }
+
         List<Employee> employees = new List<Employee>();
 
         public override void Load()
@@ -46,13 +51,10 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 if (emails.Email == email)
                 {
                     return emails;
-
                 }
-
 
             }
                 return null;
-
         }
 
 
@@ -77,6 +79,19 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 employees.Add(employee);
                 return employee;
             }
+        }
+
+        public void Delete(Employee employee)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM EMPLOYEE WHERE Email = @Email",con);
+
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = employee.Email;
+                cmd.ExecuteNonQuery();
+            }
+                employees.Remove(employee);
         }
     }
 }
