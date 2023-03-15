@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Budweg.MVVM.ViewModels;
 
 namespace Budweg.MVVM.Views
 {
@@ -23,6 +24,8 @@ namespace Budweg.MVVM.Views
         public ReportView()
         {
             InitializeComponent();
+
+            DataContext = new ReportViewModel();
         }
     }
 }

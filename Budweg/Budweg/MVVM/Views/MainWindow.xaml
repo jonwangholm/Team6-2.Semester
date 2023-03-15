@@ -134,7 +134,7 @@
                 </ListBox>
             </Border>
 
-                <Button Grid.Row="2" Margin="10">Ny Indberetning</Button>
+                <Button Grid.Row="2" Margin="10" Click="Button_Click">Ny Indberetning</Button>
         </Grid>
 
         <Grid Grid.Column="1" Background="#155672">

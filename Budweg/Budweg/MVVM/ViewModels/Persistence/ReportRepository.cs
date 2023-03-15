@@ -39,18 +39,9 @@ namespace Budweg.MVVM.ViewModels.Persistence
                         Report report = new Report(Subject, Title, IsAnon, Sender);
                         report.ReportId = ReportId;
                         reports.Add(report);
-
-                        
-
-
-
-
                     }
                 }
-
-
             }
-
         }
 
         public override void Save()
@@ -68,6 +59,21 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 }
             }
             return null;
+        }
+
+
+        public List<Report> RetrieveReports(string email)
+        {
+            List<Report> emailList = new List<Report>();
+            
+            foreach(Report report in reports)
+            {
+                if (email == report.Sender.Email)
+                {
+                    emailList.Add(report);
+                }
+            }
+            return emailList;
         }
 
         public Report Create(Report report) 
