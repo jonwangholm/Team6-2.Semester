@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Budweg.MVVM.ViewModels
 {
-    public class CreateReportViewVM
+    public class ViewReportViewVM
     {
+      public  ViewReportViewVM() 
+        { 
 
-        public CreateReportViewVM() { }
+        }
+
     }
 }

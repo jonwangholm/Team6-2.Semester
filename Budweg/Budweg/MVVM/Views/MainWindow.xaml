@@ -14,8 +14,12 @@
     </Window.DataContext>
 
     <Window.Resources>
-        <DataTemplate x:Name="reportViewModel" DataType="{x:Type ViewModels:CreateReportViewVM}">
+        <DataTemplate x:Name="CreateReportViewVM" DataType="{x:Type ViewModels:CreateReportViewVM}">
             <Views:CreateReportView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="ViewReportViewVM" DataType="{x:Type ViewModels:ViewReportViewVM}">
+            <Views:ViewReportView DataContext="{Binding}"/>
         </DataTemplate>
 
     </Window.Resources>
@@ -232,7 +236,7 @@
                             </Button.Resources>
                         </Button>
 
-                        <Button  x:Name="SendReportButton"  Visibility="Hidden" Click="Send_Click" Height="35" BorderThickness="0.5" BorderBrush="#dde2ec" Background="#2ea043" Content="Send Indberetning" Foreground="White" FontSize="20" >
+                        <Button  x:Name="SendReportButton"  Visibility="Visible" Click="Send_Click" Height="35" BorderThickness="0.5" BorderBrush="#dde2ec" Background="#2ea043" Content="Se Indberetning" Foreground="White" FontSize="20" >
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="15"/>
@@ -248,76 +252,7 @@
 
 
             <!--MessageView-->
-            <Grid Grid.Column="1" Visibility="Visible" Background="#edf0f5">
-
-
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="95"/>
-
-                </Grid.RowDefinitions>
-
-
-                <Grid Grid.Row="0" Margin="10">
-
-
-
-                    <Grid.RowDefinitions>
-
-                        <RowDefinition Height ="60"/>
-                        <RowDefinition Height ="*"/>
-
-
-                    </Grid.RowDefinitions>
-
-                    <Label Background="White" BorderThickness="2" BorderBrush="#dde2ec" Padding="0"   FontSize="25" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Content="Titel På Indberetning" Height="50">
-                        <Label.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </Label.Resources>
-                    </Label>
-                    <ListBox Grid.Row="1" Background="White" BorderBrush="#dde2ec" BorderThickness="2"  >
-                        <ListBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </ListBox.Resources>
-
-                    </ListBox>
-
-
-                </Grid>
-
-                <Grid Grid.Row="2"  Margin="10" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
-
-
-                    <TextBox Grid.Column="0" Background="White" BorderThickness="2" BorderBrush="#dde2ec" Margin="0,0,5,0">
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-
-
-
-
-                    <Button Grid.Column="1" Background="#2ea043" Content="Send" Foreground="White" FontSize="20" BorderBrush="#dde2ec" BorderThickness="2">
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="15"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                </Grid>
-            </Grid>
-            <ContentControl Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Hidden" Content="{Binding }"/>
+            <ContentControl Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Visible" Content="{Binding }"/>
 
         </Grid>
     </Grid>

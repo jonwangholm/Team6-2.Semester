@@ -30,14 +30,13 @@ namespace Budweg
         private void indtastBtn_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new CreateReportViewVM();
-            SendReportButton.Visibility = Visibility.Visible;
-            MenuControl.Visibility = Visibility.Visible;
+          
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            SendReportButton.Visibility = Visibility.Hidden;
-            MenuControl.Visibility = Visibility.Hidden;
+            DataContext = new ViewReportViewVM();
+
 
         }
     }
