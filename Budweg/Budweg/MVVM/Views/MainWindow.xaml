@@ -14,8 +14,8 @@
     </Window.DataContext>
 
     <Window.Resources>
-        <DataTemplate x:Name="reportViewModel" DataType="{x:Type ViewModels:ReportViewVM}">
-            <Views:ReportView DataContext="{Binding}"/>
+        <DataTemplate x:Name="reportViewModel" DataType="{x:Type ViewModels:CreateReportViewVM}">
+            <Views:CreateReportView DataContext="{Binding}"/>
         </DataTemplate>
 
     </Window.Resources>

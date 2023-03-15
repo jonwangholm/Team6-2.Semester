@@ -8,7 +8,6 @@ namespace Budweg.MVVM.ViewModels
 {
     public class MainVM
     {
-
-
+        
     }
 }

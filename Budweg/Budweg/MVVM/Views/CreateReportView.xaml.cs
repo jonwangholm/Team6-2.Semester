@@ -18,11 +18,13 @@ namespace Budweg.MVVM.Views
     /// <summary>
     /// Interaction logic for ReportView.xaml
     /// </summary>
-    public partial class ReportView : UserControl
+    public partial class CreateReportView : UserControl
     {
-        public ReportView()
+        public CreateReportView()
         {
             InitializeComponent();
+
+            DataContext = new CreateReportView();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
