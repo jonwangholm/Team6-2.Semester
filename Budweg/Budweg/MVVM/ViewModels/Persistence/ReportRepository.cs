@@ -10,6 +10,11 @@ namespace Budweg.MVVM.ViewModels.Persistence
     {
         private List<Report> reports = new List<Report>();
 
+        public ReportRepository()
+        {
+            Load();
+        }
+
         public override void Load()
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -20,18 +25,26 @@ namespace Budweg.MVVM.ViewModels.Persistence
 
                 using (SqlDataReader dr = cmd.ExecuteReader())
                 {
+                    List<Message> retrievedMessages = RepositoryManager.MessageRepository.RetrieveAll();
+
                     while (dr.Read())
                     {
-                        int ReportId = int.Parse(dr["ReportId"].ToString());
-                        string Subject = dr["Subject"].ToString();
-                        string Title = dr["Title"].ToString();
-                        bool IsAnon = bool.Parse(dr["IsAnonymous"].ToString());
+                        int reportId = int.Parse(dr["ReportId"].ToString());
+                        string subject = dr["Subject"].ToString();
+                        string title = dr["Title"].ToString();
+                        bool isAnon = bool.Parse(dr["IsAnonymous"].ToString());
 
-                        Employee Sender = RepositoryManager.EmployeeRepository.Retrieve(dr["Email"].ToString());
+                        Employee sender = RepositoryManager.EmployeeRepository.Retrieve(dr["Email"].ToString());
 
-                        Report report = new Report(Subject, Title, IsAnon, Sender);
+                        List<Message> messages = new();
 
-                        report.ReportId = ReportId;
+                        foreach (Message message in retrievedMessages)
+                            if (message.ReportId == reportId)
+                                messages.Add(message);
+
+                        Report report = new Report(subject, title, isAnon, sender, messages);
+
+                        report.ReportId = reportId;
                         reports.Add(report);
                     }
                 }

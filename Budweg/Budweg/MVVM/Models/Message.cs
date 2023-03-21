@@ -12,6 +12,8 @@ namespace Budweg.MVVM.Models
         public string Content { get; set; }
         public DateTime SendTime { get; set; }
 
+        public int ReportId { get; set; }
+
         public Message(string content, DateTime sendTime)
         {
             Content = content;
