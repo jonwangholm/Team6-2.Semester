@@ -73,7 +73,7 @@
                     <!--155672-->
 
 
-                    <ListBox Grid.Row="1" Background="#edf0f5" BorderThickness="2"  Margin="5" BorderBrush="#dde2ec" ItemsSource="{Binding reportsList}">
+                    <ListBox Grid.Row="1" Background="#edf0f5" BorderThickness="2"  Margin="5" BorderBrush="#dde2ec" ItemsSource="{Binding ReportVMs}">
                         <ListBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="15"/>

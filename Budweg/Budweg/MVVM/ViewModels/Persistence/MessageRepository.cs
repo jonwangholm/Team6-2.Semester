@@ -12,6 +12,11 @@ namespace Budweg.MVVM.ViewModels.Persistence
     {
         List<Message> messages = new List<Message>();
 
+        public MessageRepository()
+        {
+            Load();
+        }
+
         public override void Load()
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -24,19 +29,16 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 {
                     while (dr.Read())
                     {
-                        int MessageId = int.Parse(dr["MessageId"].ToString());
-                        string Content = dr["Content"].ToString();
-                        DateTime SendTime = DateTime.Parse(dr["SendTime"].ToString());
-                        int ReportId = int.Parse(dr["ReportId"].ToString());
+                        int messageId = int.Parse(dr["MessageId"].ToString());
+                        string content = dr["Content"].ToString();
+                        DateTime sendTime = DateTime.Parse(dr["SendTime"].ToString());
+                        int reportId = int.Parse(dr["ReportId"].ToString());
 
-                        Message message = new Message(Content, SendTime);
-                        message.MessageId = MessageId;
+                        Message message = new Message(content, sendTime);
+                        message.MessageId = messageId;
+                        message.ReportId = reportId;
 
                         messages.Add(message);
-
-                        Report report = RepositoryManager.ReportRepository.Retrieve(ReportId);
-
-                        report.Chat.Add(message);
                     }
                 }
             }
@@ -50,6 +52,11 @@ namespace Budweg.MVVM.ViewModels.Persistence
         public void Create()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Message> RetrieveAll()
+        {
+            return new(messages);
         }
     }
 }
