@@ -21,8 +21,15 @@ namespace Budweg
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    ///
+    
     public partial class MainWindow : Window
     {
+        private CreateReportViewVM CreateView = new CreateReportViewVM();
+
+        ViewReportViewVM ViewReport = new ViewReportViewVM();
+
+
         public MainWindow()
         {
             InitializeComponent();

@@ -27,12 +27,7 @@ namespace Budweg.MVVM.Commands
             {
                 CreateReportViewVM CRVM = new CreateReportViewVM();
 
-                Report report = new(CRVM.EnterTitle, CRVM.EnterChat, CRVM.IsAnon, new Employee("A", "A@a.dk", false));
 
-
-                MVM.reportsList.Add(report);
-
-                RepositoryManager.ReportRepository.Create(report);
             }
         }
     }
