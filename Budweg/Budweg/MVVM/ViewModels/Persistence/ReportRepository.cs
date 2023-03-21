@@ -27,7 +27,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
                         string Title = dr["Title"].ToString();
                         bool IsAnon = bool.Parse(dr["IsAnonymous"].ToString());
 
-                        Employee Sender = RepositoryManager.EmployeeRepository.GetEmployeeId(dr["Email"].ToString());
+                        Employee Sender = RepositoryManager.EmployeeRepository.Retrieve(dr["Email"].ToString());
 
                         Report report = new Report(Subject, Title, IsAnon, Sender);
 
@@ -50,6 +50,16 @@ namespace Budweg.MVVM.ViewModels.Persistence
                     return report;
 
             return null;
+        }
+
+        public List<Report> RetrieveAll()
+        {
+            return new(reports);
+        }
+
+        public List<Report> RetrieveReports(string email)
+        {
+            throw new NotImplementedException();
         }
 
         public Report Create(Report report)

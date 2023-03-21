@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Budweg.MVVM.Models;
 using Budweg.MVVM.ViewModels;
+using Budweg.MVVM.ViewModels.Persistence;
 
 namespace Budweg
 {
@@ -21,10 +23,11 @@ namespace Budweg
     /// </summary>
     public partial class MainWindow : Window
     {
-        
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainVM();
         }
 
         private void indtastBtn_Click(object sender, RoutedEventArgs e)

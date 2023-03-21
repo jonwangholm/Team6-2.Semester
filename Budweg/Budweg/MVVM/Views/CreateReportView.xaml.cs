@@ -24,7 +24,7 @@ namespace Budweg.MVVM.Views
         {
             InitializeComponent();
 
-            DataContext = new CreateReportView();
+            // DataContext = new CreateReportView();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

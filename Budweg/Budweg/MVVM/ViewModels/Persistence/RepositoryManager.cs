@@ -8,8 +8,8 @@ namespace Budweg.MVVM.ViewModels.Persistence
 {
     public static class RepositoryManager
     {
-        public static EmployeeRepository EmployeeRepository { get; set; }   
-        public static MessageRepository MessageRepository { get; set; }
-        public static ReportRepository ReportRepository { get; set; }
+        public static EmployeeRepository EmployeeRepository { get; set; } = new();
+        public static MessageRepository MessageRepository { get; set; } = new();
+        public static ReportRepository ReportRepository { get; set; } = new();
     }
 }

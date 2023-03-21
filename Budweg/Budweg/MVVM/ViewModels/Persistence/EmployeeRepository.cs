@@ -12,12 +12,12 @@ namespace Budweg.MVVM.ViewModels.Persistence
 {
     public class EmployeeRepository : Repository
     {
-        public EmployeeRepository() 
+        List<Employee> employees = new List<Employee>();
+
+        public EmployeeRepository()
         {
             Load();
         }
-
-        List<Employee> employees = new List<Employee>();
 
         public override void Load()
         {
@@ -44,17 +44,13 @@ namespace Budweg.MVVM.ViewModels.Persistence
             }
         }
 
-        public Employee GetEmployeeId(string email)
+        public Employee Retrieve(string email)
         {
-            foreach (Employee emails in employees)
-            {
-                if (emails.Email == email)
-                {
-                    return emails;
-                }
+            foreach (Employee employee in employees)
+                if (employee.Email == email)
+                    return employee;
 
-            }
-                return null;
+            return null;
         }
 
 
@@ -69,7 +65,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEE(Name, Email, IsHR)" + 
+                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEE(Name, Email, IsHR)" +
                     "VALUES(@Name, @Email, @IsHR)", con);
                 cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = employee.Name;
                 cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = employee.Email;
@@ -86,12 +82,13 @@ namespace Budweg.MVVM.ViewModels.Persistence
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM EMPLOYEE WHERE Email = @Email",con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM EMPLOYEE WHERE Email = @Email", con);
 
                 cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = employee.Email;
                 cmd.ExecuteNonQuery();
             }
-                employees.Remove(employee);
+
+            employees.Remove(employee);
         }
     }
 }
