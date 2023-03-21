@@ -33,7 +33,7 @@ namespace Budweg.MVVM.ViewModels.Domain
             Chat = new();
 
             foreach (Message message in source.Chat)
-                Chat.Add(new MessageVM(message));
+                Chat.Add(new(message));
 
             ReportId = source.ReportId;
         }
