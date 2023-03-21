@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Budweg.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="584" d:DesignWidth="711">
+           d:DesignHeight="584" d:DesignWidth="711">
     <Border Background="#1cb17d" CornerRadius="20">
         <Grid Margin="20">
             <Grid.RowDefinitions>

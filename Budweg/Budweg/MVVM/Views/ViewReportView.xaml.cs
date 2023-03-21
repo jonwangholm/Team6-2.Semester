@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Budweg.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for CreateReportView.xaml
+    /// Interaction logic for ViewReportView.xaml
     /// </summary>
-    public partial class CreateReportView : UserControl
+    public partial class ViewReportView : UserControl
     {
-        public CreateReportView()
+        public ViewReportView()
         {
             InitializeComponent();
         }
