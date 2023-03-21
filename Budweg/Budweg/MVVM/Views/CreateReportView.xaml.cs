@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budweg.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Budweg.MVVM.Views
     /// </summary>
     public partial class CreateReportView : UserControl
     {
+
         public CreateReportView()
         {
+
             InitializeComponent();
+
         }
     }
 }

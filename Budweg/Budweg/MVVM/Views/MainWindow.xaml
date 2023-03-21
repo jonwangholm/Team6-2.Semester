@@ -16,10 +16,12 @@
     <Window.Resources>
         <DataTemplate x:Name="CreateReportViewVM" DataType="{x:Type ViewModels:CreateReportViewVM}">
             <Views:CreateReportView DataContext="{Binding}"/>
+
         </DataTemplate>
 
         <DataTemplate x:Name="ViewReportViewVM" DataType="{x:Type ViewModels:ViewReportViewVM}">
             <Views:ViewReportView DataContext="{Binding}"/>
+
         </DataTemplate>
 
     </Window.Resources>
@@ -71,23 +73,59 @@
                     <!--155672-->
 
 
-                    <ListBox Grid.Row="1" Background="#edf0f5" BorderThickness="2"  Margin="5" BorderBrush="#dde2ec">
+                    <ListBox Grid.Row="1" Background="#edf0f5" BorderThickness="2"  Margin="5" BorderBrush="#dde2ec" ItemsSource="{Binding reportsList}">
                         <ListBox.Resources>
                             <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
+                                <Setter Property="CornerRadius" Value="15"/>
+                                <Setter Property="BorderThickness" Value="3"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
                             </Style>
                         </ListBox.Resources>
 
                         <ListBox.ItemTemplate>
+                     
                             <DataTemplate>
-                                <StackPanel Width="100">
-                                    <Label>GG</Label>
-                                </StackPanel>
+                             
+
+                               
+                                    <Grid  Width="240" Height="91"  >
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="28"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="23"/>
+
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="0,0,0,29" Grid.RowSpan="2">
+                                        <Label Foreground="Black" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="{Binding Title}"></Label>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                            <Label Background="Green" Foreground="White" Height="26">Bekræftet</Label>
+                                        </StackPanel>
+                                        <Grid Grid.Row="2"  Margin="0,0,0,1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
+                                            <Label Grid.Column="1" Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="{Binding Sender.Name}" Margin="05,0,0,0"/>
+                                            <Label Grid.Column="2" Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="13-02-2022" Margin="0,0,20,0"/>
+
+
+                                        </Grid>
+                                    </Grid>
+
+                           
                             </DataTemplate>
                         </ListBox.ItemTemplate>
 
 
-                        <ListBoxItem Background="#ffffff" BorderBrush="#dde2ec" Width="239" Margin="0,10">
+                        <!--<ListBoxItem Background="#ffffff" BorderBrush="#dde2ec" Width="239" Margin="0,10">
 
                             <ListBoxItem.Resources>
                                 <Style TargetType="{x:Type Border}">
@@ -219,7 +257,7 @@
                             </Grid>
 
 
-                        </ListBoxItem>
+                        </ListBoxItem>-->
 
 
 
@@ -252,7 +290,7 @@
 
 
             <!--MessageView-->
-            <ContentControl Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Visible" Content="{Binding }"/>
+            <ContentControl Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Visible" Content="{Binding}"/>
 
         </Grid>
     </Grid>

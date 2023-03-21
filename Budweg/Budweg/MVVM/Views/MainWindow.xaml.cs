@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Budweg.MVVM.ViewModels;
+using Budweg.MVVM.Views;
 
 namespace Budweg
 {
@@ -21,6 +22,12 @@ namespace Budweg
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        CreateReportView CreateView { get; set; } = new CreateReportView();
+        ViewReportView ViewReport { get; set; } = new ViewReportView();
+
+        //private MainVM MainVm { get; set; } = new MainVM();
+
         
         public MainWindow()
         {
@@ -29,14 +36,13 @@ namespace Budweg
 
         private void indtastBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new CreateReportViewVM();
-          
+            DataContext = CreateView;
+
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ViewReportViewVM();
-
+            DataContext = ViewReport;
 
         }
     }
