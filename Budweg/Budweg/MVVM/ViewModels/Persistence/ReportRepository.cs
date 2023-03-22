@@ -88,7 +88,7 @@ namespace Budweg.MVVM.ViewModels.Persistence
                 cmd.Parameters.Add("@Subject", SqlDbType.NVarChar).Value = report.Subject;
                 cmd.Parameters.Add("@Title", SqlDbType.NVarChar).Value = report.Title;
                 cmd.Parameters.Add("@IsAnonymous", SqlDbType.Bit).Value = report.IsAnon;
-                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = report.Sender;
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = report.Sender.Email;
 
                 report.ReportId = Convert.ToInt32(cmd.ExecuteScalar());
 

@@ -21,12 +21,17 @@ namespace Budweg.MVVM.Views
     /// </summary>
     public partial class CreateReportView : UserControl
     {
-
+        private CreateReportViewVM vm = new CreateReportViewVM();
         public CreateReportView()
         {
 
             InitializeComponent();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            vm.CreateReportCmd();
         }
     }
 }

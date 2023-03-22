@@ -85,12 +85,28 @@
                         <ListBox.ItemTemplate>
                      
                             <DataTemplate>
-                             
 
-                               
-                                    <Grid  Width="240" Height="91"  >
+                                <DataTemplate.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="15"/>
+                                        <Setter Property="BorderThickness" Value="3"/>
+                                        <Setter Property="BorderBrush" Value="Black"/>
+                                    </Style>
+                                </DataTemplate.Resources>
 
-                                        <Grid.RowDefinitions>
+
+
+                                <Grid  Width="240" Height="91" Background="#a6a6a6" >
+
+                                    <Grid.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="20"/>
+                                            <Setter Property="BorderThickness" Value="3"/>
+                                            <Setter Property="BorderBrush" Value="Black"/>
+                                        </Style>
+                                    </Grid.Resources>
+
+                                    <Grid.RowDefinitions>
                                             <RowDefinition Height="28"/>
                                             <RowDefinition Height="*"/>
                                             <RowDefinition Height="23"/>
@@ -114,7 +130,7 @@
                                             </Grid.ColumnDefinitions>
                                             <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
                                             <Label Grid.Column="1" Foreground="Black" Padding="0" VerticalContentAlignment="Center" Content="{Binding Sender.Name}" Margin="05,0,0,0"/>
-                                            <Label Grid.Column="2" Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="13-02-2022" Margin="0,0,20,0"/>
+                                            <Label Grid.Column="2" Foreground="Black" Padding="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Content="{Binding Sender.Email}" Margin="0,0,20,0"/>
 
 
                                         </Grid>
@@ -290,7 +306,7 @@
 
 
             <!--MessageView-->
-            <ContentControl Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Visible" Content="{Binding}"/>
+            <ContentControl  Grid.Column="1" Margin="5" x:Name="MenuControl" Visibility="Visible" Content="{Binding}"/>
 
         </Grid>
     </Grid>

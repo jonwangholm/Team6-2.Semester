@@ -10,6 +10,9 @@ namespace Budweg.MVVM.ViewModels
     public class MainVM : INotifyPropertyChanged
     {
         private EmployeeVM activeEmployeeVM;
+
+
+
         public EmployeeVM ActiveEmployeeVM
         {
             get { return activeEmployeeVM; }

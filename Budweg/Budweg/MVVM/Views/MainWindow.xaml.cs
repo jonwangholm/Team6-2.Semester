@@ -39,13 +39,23 @@ namespace Budweg
 
         private void indtastBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = CreateView;
 
+            MenuControl.Content = CreateView;
+
+            if (DataContext is MainVM mvm)
+            {
+                if (CreateView.NewCreated != null)
+                {
+                    mvm.ReportVMs.Add(CreateView.NewCreated);
+                } 
+            }
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = ViewReport;
+
+
+            MenuControl.Content = ViewReport;   
 
         }
     }

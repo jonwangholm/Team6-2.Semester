@@ -8,9 +8,6 @@
              mc:Ignorable="d" 
            d:DesignHeight="584" d:DesignWidth="711">
 
-    <UserControl.DataContext>
-        <viewModels:CreateReportViewVM/>
-    </UserControl.DataContext>
 
 
     <Border Background="#1cb17d" CornerRadius="20">
@@ -35,14 +32,14 @@
             </StackPanel>
 
 
-            <TextBox Text="{Binding EnterTitle}" BorderBrush="#dde2ec" BorderThickness="2" Margin="21,0,20,0">
+            <TextBox Text="{Binding Subject}" BorderBrush="#dde2ec" BorderThickness="2" Margin="21,0,20,0">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <TextBox Text="{Binding EnterChat}"  Grid.Row="2"  Margin="20,0,20,0" >
+            <TextBox Text="{Binding Title}"  Grid.Row="2"  Margin="20,0,20,0" >
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -79,7 +76,7 @@
 
 
                 <Label Grid.Column="1" VerticalAlignment="Center" Margin="5,10" VerticalContentAlignment="Center"  FontSize="15" Foreground="#dde2ec" >Vælg de ansatte denne indberetning omhandler:</Label>
-                <Button Content="Opret Rapport" Command="{Binding Path=CreateReportCmd}" CommandParameter="{Binding}" Grid.Column="2" BorderThickness="2"  Background="White" Margin="0,20,0,20">
+                <Button Content="Opret Rapport"   Grid.Column="2" BorderThickness="2"  Background="White" Margin="0,20,0,20" Click="Button_Click">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
 
