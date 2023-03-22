@@ -29,7 +29,7 @@
 
             </Grid.RowDefinitions>
 
-            <Label Background="White" BorderThickness="2" BorderBrush="#dde2ec" Padding="0"   FontSize="25" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Content="Titel På Indberetning" Height="50">
+            <Label Background="White" BorderThickness="2" BorderBrush="#dde2ec" Padding="0"   FontSize="25" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Content="Simone forfalsker ordre dokumenter" Height="50">
                 <Label.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -61,8 +61,8 @@
 
                         </Grid.RowDefinitions>
 
-                        <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="0,0,0,29" Grid.RowSpan="2">
-                            <Label Foreground="White" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="Adil er blevet væk"/>
+                        <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="0,0,-43,29" Grid.RowSpan="2">
+                            <Label Foreground="White" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="Jeg tror Simone stjæler ordre" Width="278"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Orientation="Horizontal"/>
@@ -104,7 +104,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="0,0,0,29" Grid.RowSpan="2">
-                            <Label Foreground="White" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="Vi skal nok finde ham!"/>
+                            <Label Foreground="White" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="Vi får det undersøgt. "/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Orientation="Horizontal"/>
@@ -127,6 +127,91 @@
 
 
                 </ListBoxItem>
+                <ListBoxItem Background="DarkGreen" BorderBrush="Green" Width="350" HorizontalAlignment="Right">
+
+                    <ListBoxItem.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="15"/>
+                            <Setter Property="BorderThickness" Value="3"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </Style>
+                    </ListBoxItem.Resources>
+                    <Grid  Width="240" Height="91"  >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="23"/>
+
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="0,0,-34,29" Grid.RowSpan="2">
+                            <Label Foreground="White" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="Jeg har set hende gøre det igen"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,-34,29"/>
+                        <Grid Grid.Row="2"  Margin="0,0,0,1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="18.144"/>
+                                <ColumnDefinition Width="63.216"/>
+
+
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
+                            <Label Grid.Column="1" Foreground="White" Padding="0" VerticalContentAlignment="Center" Content="Anonym (Dig)" Margin="5,0,18,0" Grid.ColumnSpan="2"/>
+
+
+                        </Grid>
+
+                    </Grid>
+
+
+                </ListBoxItem>
+                <ListBoxItem Background="DarkGreen" BorderBrush="Green" Width="350" HorizontalAlignment="Left">
+
+                    <ListBoxItem.Resources>
+                        <Style TargetType="{x:Type Border}"> 
+                            <Setter Property="CornerRadius" Value="15"/>
+                            <Setter Property="BorderThickness" Value="3"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </Style>
+                    </ListBoxItem.Resources>
+                    <Grid  Width="240" Height="91"  >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="23"/>
+
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0"  Orientation="Horizontal" Margin="0,0,-65,29" Grid.RowSpan="2">
+                            <Label Foreground="White" FontSize="18" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0" Content="Tak. Hun er meldt til politiet!"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal"/>
+                        <Grid Grid.Row="2"  Margin="0,0,0,1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="18.144"/>
+                                <ColumnDefinition Width="63.216"/>
+
+
+                            </Grid.ColumnDefinitions>
+                            <Image Source="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" Margin="5,0,0,2"/>
+                            <Label Grid.Column="1" Foreground="White" Padding="0" VerticalContentAlignment="Center" Content="HR" Margin="5,0,18,0" Grid.ColumnSpan="2"/>
+
+
+                        </Grid>
+
+                    </Grid>
+
+
+                </ListBoxItem>
+
 
             </ListBox>
 

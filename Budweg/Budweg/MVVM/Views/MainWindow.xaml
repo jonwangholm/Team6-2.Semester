@@ -74,7 +74,8 @@
 
 
                     <ListBox Grid.Row="1" Background="#edf0f5" BorderThickness="2"  Margin="5" BorderBrush="#dde2ec"  ItemsSource="{Binding ReportVMs}">
-                        <ListBox.Resources>
+
+                            <ListBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="15"/>
                                 <Setter Property="BorderThickness" Value="3"/>
@@ -94,9 +95,10 @@
                                     </Style>
                                 </DataTemplate.Resources>
 
+                                <Border Background="White" BorderThickness="3" BorderBrush="#cdcdcd" CornerRadius="15">
 
-
-                                <Grid  Width="240" Height="91" Background="#a6a6a6" >
+                           
+                                    <Grid  Width="240" Height="91" >
 
                                     <Grid.Resources>
                                         <Style TargetType="{x:Type Border}">
@@ -136,9 +138,12 @@
                                         </Grid>
                                     </Grid>
 
-                           
+                                </Border>
+
                             </DataTemplate>
+
                         </ListBox.ItemTemplate>
+
 
 
                         <!--<ListBoxItem Background="#ffffff" BorderBrush="#dde2ec" Width="239" Margin="0,10">
